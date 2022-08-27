@@ -45,6 +45,7 @@ jobs:
                     branch-suffix: random
                     delete-branch: true
                     add-paths: ${{ inputs.paths }}
+                    author: Andrey Helldar <helldar@dragon-code.pro>
                     title: "[source]: Updated ${{ inputs.project }} keys"
                     commit-message: 🗝️ Updated ${{ inputs.project }} keys
                     body: |
