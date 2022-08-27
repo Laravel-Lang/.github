@@ -3,9 +3,6 @@ name: download
 on:
     workflow_call:
         inputs:
-            token:
-                required: true
-                type: string
             project:
                 required: true
                 type: string
@@ -44,7 +41,6 @@ jobs:
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v4
                 with:
-                    token: ${{ inputs.token }}
                     branch: projects/patch
                     branch-suffix: random
                     delete-branch: true
