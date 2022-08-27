@@ -1,1 +1,1 @@
-# .github
+![laravel lang project localization](https://preview.dragon-code.pro/laravel-lang/project-localization.svg?brand=laravel&invert=1)
