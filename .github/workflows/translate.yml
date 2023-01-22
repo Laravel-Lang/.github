@@ -34,6 +34,6 @@ jobs:
                     branch-suffix: random
                     delete-branch: true
                     add-paths: locales/${{ matrix.locale }}/*
-                    title: "[${{ matrix.locale }}]: Machine translation of untranslated values"
-                    commit-message: 🤖 Machine translation of untranslated values
+                    title: "[${{ matrix.locale }}]: Machine translation of missing values 🤖"
+                    commit-message: 🤖 Machine translation of missing values
                     body: Translated values for ${{ matrix.locale }} 💪
