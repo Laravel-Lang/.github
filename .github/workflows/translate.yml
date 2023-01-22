@@ -1,0 +1,116 @@
+name: translate
+
+jobs:
+    download:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: true
+            matrix:
+                locale: [
+                    "af",
+                    "ar",
+                    "az",
+                    "be",
+                    "bg",
+                    "bn",
+                    "bs",
+                    "ca",
+                    "cs",
+                    "cy",
+                    "da",
+                    "de",
+                    "de_CH",
+                    "el",
+                    "en",
+                    "es",
+                    "et",
+                    "eu",
+                    "fa",
+                    "fi",
+                    "fil",
+                    "fr",
+                    "gl",
+                    "gu",
+                    "he",
+                    "hi",
+                    "hr",
+                    "hu",
+                    "hy",
+                    "id",
+                    "is",
+                    "it",
+                    "ja",
+                    "ka",
+                    "kk",
+                    "km",
+                    "kn",
+                    "ko",
+                    "lt",
+                    "lv",
+                    "mk",
+                    "mn",
+                    "mr",
+                    "ms",
+                    "nb",
+                    "ne",
+                    "nl",
+                    "nn",
+                    "oc",
+                    "pl",
+                    "ps",
+                    "pt",
+                    "pt_BR",
+                    "ro",
+                    "ru",
+                    "sc",
+                    "si",
+                    "sk",
+                    "sl",
+                    "sq",
+                    "sr_Cyrl",
+                    "sr_Latn",
+                    "sr_Latn_ME",
+                    "sv",
+                    "sw",
+                    "tg",
+                    "th",
+                    "tk",
+                    "tl",
+                    "tr",
+                    "ug",
+                    "uk",
+                    "ur",
+                    "uz_Cyrl",
+                    "uz_Latn",
+                    "vi",
+                    "zh_CN",
+                    "zh_HK",
+                    "zh_TW"
+                ]
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v3
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
+                    coverage: none
+
+            -   name: Install dependencies
+                run: composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+
+            -   name: Translate
+                run: vendor/bin/lang translate --locale ${{ matrix.locale }}
+
+            -   name: Create a Pull Request
+                uses: peter-evans/create-pull-request@v4
+                with:
+                    branch: projects/translate
+                    branch-suffix: random
+                    delete-branch: true
+                    add-paths: locales/${{ matrix.locale }}/*
+                    title: "[${{ matrix.locale }}]: Machine translation of untranslated values"
+                    commit-message: 🤖 Machine translation of untranslated values
+                    body: Translated values for ${{ matrix.locale }} 💪
