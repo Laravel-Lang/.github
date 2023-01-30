@@ -23,10 +23,15 @@ jobs:
                     coverage: none
 
             -   name: Install dependencies
-                run: composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+                run: |
+                    composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+                    composer global require dragon-code/codestyler
 
             -   name: Translate
                 run: vendor/bin/lang translate --locale ${{ matrix.locale }}
+
+            -   name: Code-Style
+                run: codestyle fix
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v4
