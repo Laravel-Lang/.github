@@ -30,7 +30,7 @@ jobs:
                 run: vendor/bin/lang translate --locale ${{ matrix.locale }}
 
             -   name: Code-Style
-                run: codestyle fix
+                run: codestyle
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v4
