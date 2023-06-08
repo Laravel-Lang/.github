@@ -36,7 +36,7 @@ jobs:
                 run: ${{ inputs.commands }}
 
             -   name: Code-Style
-                run: codestyle fix
+                run: codestyle
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v4
