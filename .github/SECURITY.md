@@ -1,0 +1,68 @@
+# Security Policy
+
+**PLEASE DON'T DISCLOSE SECURITY-RELATED ISSUES PUBLICLY, [SEE BELOW](#reporting-a-vulnerability).**
+
+## Supported Versions
+
+Please see [our support policy](https://laravel-lang.com/installation/compatibility/support-policy.html) for information on supported versions for security releases.
+
+## Reporting a Vulnerability
+
+If you discover a security vulnerability within Laravel Lang, please send an email to Andrey Helldar at helldar@dragon-code.pro or Fred Delrieu at caouecs@caouecs.net. All security vulnerabilities will be promptly addressed.
+
+### Public PGP Key
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+aKMDY1olA0v/KqP++OI2D29icg==
+=adpr
+-----END PGP PUBLIC KEY BLOCK-----
+```
