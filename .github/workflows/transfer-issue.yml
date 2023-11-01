@@ -1,0 +1,29 @@
+name: Transfer Issue
+
+on:
+    workflow_call:
+        inputs:
+            token:
+                required: true
+                type: string
+            label:
+                required: true
+                type: string
+
+permissions: write-all
+
+jobs:
+    style:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Transfer issue
+                uses: lando/transfer-issue-action@v2
+                with:
+                    token: ${{ inputs.token }}
+                    router: Laravel-Lang/common
+                    apply_label: "${{ inputs.label }}"
+                    create_stub: true
