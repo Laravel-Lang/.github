@@ -33,7 +33,7 @@ jobs:
                 run: codestyle
 
             -   name: Create a Pull Request
-                uses: peter-evans/create-pull-request@v4
+                uses: peter-evans/create-pull-request@v5
                 with:
                     branch: projects/translate
                     branch-suffix: random
