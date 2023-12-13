@@ -23,6 +23,8 @@ categories:
   - title: 'Security'
     labels:
       - 'security'
+      - 'security fix'
+      - 'security vulnerability'
 
 exclude-labels:
   - 'skip-changelog'
