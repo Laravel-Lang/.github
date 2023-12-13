@@ -6,6 +6,8 @@ category-template: '## $TITLE'
 sort-by: 'title'
 sort-direction: 'ascending'
 
+include-pre-releases: true
+
 categories:
   - title: 'Added'
     labels:
@@ -23,6 +25,7 @@ categories:
       - 'security fix'
       - 'security vulnerability'
   - title: 'Machine translation'
+    collapse-after: 10
     labels:
       - 'machine'
 
