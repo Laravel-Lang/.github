@@ -9,11 +9,6 @@ sort-direction: 'ascending'
 include-pre-releases: true
 
 categories:
-  - title: 'Security'
-    labels:
-      - 'security'
-      - 'security fix'
-      - 'security vulnerability'
   - title: 'Added'
     labels:
       - 'added'
@@ -21,6 +16,9 @@ categories:
     labels:
       - 'fix'
       - 'bug'
+  - title: 'Removed'
+    labels:
+      - 'removed'
   - title: 'Machine translation'
     collapse-after: 10
     labels:
@@ -29,9 +27,11 @@ categories:
     collapse-after: 10
     labels:
       - 'dependencies'
-  - title: 'Removed'
+  - title: 'Security'
     labels:
-      - 'removed'
+      - 'security'
+      - 'security fix'
+      - 'security vulnerability'
 
 exclude-labels:
   - 'skip-changelog'
