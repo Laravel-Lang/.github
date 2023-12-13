@@ -24,9 +24,6 @@ categories:
 exclude-labels:
   - 'skip-changelog'
 
-exclude-contributors:
-  - 'dependabot'
-
 version-resolver:
   major:
     labels:
