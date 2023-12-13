@@ -7,24 +7,24 @@ sort-by: 'title'
 sort-direction: 'ascending'
 
 categories:
-  - title: 'Machine'
-    labels:
-      - 'machine'
   - title: 'Added'
     labels:
       - 'added'
-  - title: 'Removed'
-    labels:
-      - 'removed'
   - title: 'Fixed'
     labels:
       - 'fix'
       - 'bug'
+  - title: 'Removed'
+    labels:
+      - 'removed'
   - title: 'Security'
     labels:
       - 'security'
       - 'security fix'
       - 'security vulnerability'
+  - title: 'Machine translation'
+    labels:
+      - 'machine'
 
 exclude-labels:
   - 'skip-changelog'
