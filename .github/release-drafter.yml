@@ -7,6 +7,9 @@ sort-by: 'title'
 sort-direction: 'ascending'
 
 categories:
+  - title: 'Machine'
+    labels:
+      - 'machine'
   - title: 'Added'
     labels:
       - 'added'
