@@ -23,6 +23,7 @@ categories:
 
 exclude-labels:
   - 'skip-changelog'
+  - 'dependencies'
 
 version-resolver:
   major:
