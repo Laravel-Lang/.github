@@ -3,6 +3,7 @@ tag-template: '$RESOLVED_VERSION'
 change-template: '- $TITLE by @$AUTHOR (#$NUMBER)'
 category-template: '## $TITLE'
 
+sort-by: 'title'
 sort-direction: 'ascending'
 
 categories:
@@ -22,6 +23,9 @@ categories:
 
 exclude-labels:
   - 'skip-changelog'
+
+exclude-contributors:
+  - 'dependabot'
 
 version-resolver:
   major:
