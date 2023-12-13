@@ -1,34 +1,38 @@
-name-template: 'v$NEXT_MINOR_VERSION'
-tag-template: 'v$NEXT_MINOR_VERSION'
-change-template: '- $TITLE (#$NUMBER)'
+name-template: '$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+change-template: '- $TITLE by @$AUTHOR (#$NUMBER)'
+category-template: '## $TITLE'
+
+sort-direction: 'ascending'
 
 categories:
-  - title: 'Breaking Changes'
+  - title: 'Added'
     labels:
-      - 'breakingchange'
-  - title: 'Experimental Features'
+      - 'added'
+  - title: 'Removed'
     labels:
-      - 'experimental'
-  - title: 'New Features'
-    labels:
-      - 'feature'
-      - 'enhancement'
+      - 'removed'
   - title: 'Fixed'
     labels:
       - 'fix'
-      - 'bugfix'
       - 'bug'
-      - 'BUG'
-  - title: 'Maintenance'
-    label: 'maintenance'
+  - title: 'Security'
+    labels:
+      - 'security'
 
 exclude-labels:
   - 'skip-changelog'
 
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  default: patch
+
 template: |
+  ## Changed
+
   $CHANGES
-
-  ### Contributors
-  We'd like to thank all the contributors who worked on this release!
-
-  $CONTRIBUTORS
