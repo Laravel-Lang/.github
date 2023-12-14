@@ -12,4 +12,4 @@ Please see [CONTRIBUTING](https://laravel-lang.com/contributing.html) for detail
 
 ## License
 
-This package is licensed under the [MIT License][https://laravel-lang.com/license.html].
+This package is licensed under the [MIT License](https://laravel-lang.com/license.html).
