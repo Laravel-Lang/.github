@@ -14,7 +14,7 @@ categories:
       - 'added'
   - title: 'Changed'
   - title: 'Machine translations'
-    collapse-after: 10
+    collapse-after: 20
     labels:
       - 'machine'
   - title: 'Removed'
