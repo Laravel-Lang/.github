@@ -44,6 +44,8 @@ version-resolver:
   minor:
     labels:
       - 'minor'
+      - 'added'
+      - 'removed'
   default: patch
 
 template: $CHANGES
