@@ -12,17 +12,18 @@ categories:
   - title: 'Added'
     labels:
       - 'added'
+  - title: 'Changed'
+  - title: 'Changed machine translation'
+    collapse-after: 10
+    labels:
+      - 'machine'
+  - title: 'Removed'
+    labels:
+      - 'removed'
   - title: 'Fixed'
     labels:
       - 'fix'
       - 'bug'
-  - title: 'Removed'
-    labels:
-      - 'removed'
-  - title: 'Machine translation'
-    collapse-after: 10
-    labels:
-      - 'machine'
   - title: 'Dependencies'
     collapse-after: 10
     labels:
@@ -45,7 +46,4 @@ version-resolver:
       - 'minor'
   default: patch
 
-template: |
-  ## Changed
-
-  $CHANGES
+template: $CHANGES
