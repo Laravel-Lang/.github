@@ -13,7 +13,7 @@ categories:
     labels:
       - 'added'
   - title: 'Changed'
-  - title: 'Changed machine translation'
+  - title: 'Machine translations'
     collapse-after: 10
     labels:
       - 'machine'
