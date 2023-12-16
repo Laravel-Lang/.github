@@ -41,11 +41,11 @@ version-resolver:
   major:
     labels:
       - 'major'
+      - 'removed'
   minor:
     labels:
       - 'minor'
       - 'added'
-      - 'removed'
   default: patch
 
 template: $CHANGES
