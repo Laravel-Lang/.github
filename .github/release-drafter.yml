@@ -46,6 +46,7 @@ version-resolver:
     labels:
       - 'minor'
       - 'added'
+      - 'feature'
   default: patch
 
 template: $CHANGES
