@@ -42,3 +42,4 @@ jobs:
                     title: "[${{ matrix.locale }}]: Machine translation of missing values 🤖"
                     commit-message: 🤖 Machine translation of missing values
                     body: Translated values for ${{ matrix.locale }} 💪
+                    labels: machine
