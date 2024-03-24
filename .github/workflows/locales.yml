@@ -1,10 +1,10 @@
-name: Missing Locales
+name: Add Locales
 
 on:
     workflow_call:
 
 jobs:
-    keys:
+    missing:
         runs-on: ubuntu-latest
 
         steps:
