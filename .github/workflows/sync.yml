@@ -38,4 +38,6 @@ jobs:
                     title: "[source]: Synchronization of translation keys"
                     commit-message: 🔑 Synchronization of translation keys
                     body: 🔑 Synchronization of translation keys
-                    labels: sync
+                    labels: |
+                        sync
+                        skip-changelog
