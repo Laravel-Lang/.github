@@ -38,4 +38,7 @@ jobs:
                     title: "[source]: Added missing locales"
                     commit-message: ✏️ Adding missing locales
                     body: ✏️ Adding missing locales
-                    labels: locales
+                    labels: |
+                        added
+                        locales
+                        
