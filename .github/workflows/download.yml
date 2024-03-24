@@ -1,4 +1,4 @@
-name: download
+name: Download
 
 on:
     workflow_call:
@@ -14,7 +14,7 @@ on:
                 type: string
 
 jobs:
-    download:
+    project:
         runs-on: ubuntu-latest
 
         steps:
