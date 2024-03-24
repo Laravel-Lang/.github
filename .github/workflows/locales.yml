@@ -1,0 +1,41 @@
+name: Missing Locales
+
+on:
+    workflow_call:
+
+jobs:
+    keys:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
+                    coverage: none
+
+            -   name: Install dependencies
+                run: |
+                    composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+                    composer global require dragon-code/codestyler
+
+            -   name: Adding missing locales
+                run: vendor/bin/lang create
+
+            -   name: Code-Style
+                run: codestyle
+
+            -   name: Create a Pull Request
+                uses: peter-evans/create-pull-request@v6
+                with:
+                    branch: projects/locales
+                    branch-suffix: random
+                    delete-branch: true
+                    add-paths: locales/*
+                    title: "[source]: Added missing locales"
+                    commit-message: ✏️ Adding missing locales
+                    body: ✏️ Adding missing locales
+                    labels: locales
