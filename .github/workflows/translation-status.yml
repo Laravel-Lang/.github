@@ -1,0 +1,36 @@
+name: Translation Status
+
+on:
+    workflow_call:
+
+jobs:
+    keys:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
+                    coverage: none
+
+            -   name: Install dependencies
+                run: composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+
+            -   name: Update status
+                run: vendor/bin/lang status
+
+            -   name: Create a Pull Request
+                uses: peter-evans/create-pull-request@v6
+                with:
+                    branch: projects/status
+                    branch-suffix: random
+                    delete-branch: true
+                    add-paths: docs/*
+                    title: "[source]: Translations status has been updated"
+                    commit-message: 📃 Translation statuses have been updated
+                    body: 📃 Translation statuses have been updated
+                    labels: statuses
