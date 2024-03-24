@@ -33,4 +33,6 @@ jobs:
                     title: "[source]: Translations status has been updated"
                     commit-message: 📃 Translation statuses have been updated
                     body: 📃 Translation statuses have been updated
-                    labels: statuses
+                    labels: |
+                        statuses
+                        skip-changelog
