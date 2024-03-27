@@ -8,12 +8,16 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
-  update_release_draft:
+  update:
     name: Release Draft
+
+    permissions:
+        contents: write
+        pull-requests: write
+
     runs-on: ubuntu-latest
 
     steps:
