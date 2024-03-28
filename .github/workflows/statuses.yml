@@ -4,7 +4,9 @@ on:
     workflow_call:
 
 jobs:
-    keys:
+    collect:
+        name: Collect
+
         runs-on: ubuntu-latest
 
         steps:
