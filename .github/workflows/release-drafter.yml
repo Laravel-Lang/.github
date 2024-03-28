@@ -1,4 +1,4 @@
-name: Release Drafter
+name: Release
 
 on:
     workflow_call:
@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  update:
-    name: Release Draft
+  draft:
+    name: Draft
 
     permissions:
         contents: write
