@@ -5,6 +5,8 @@ on:
 
 jobs:
     locale:
+        name: Locale
+
         runs-on: ubuntu-latest
         strategy:
             fail-fast: true
