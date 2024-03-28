@@ -5,6 +5,8 @@ on:
 
 jobs:
     keys:
+        name: Keys
+
         runs-on: ubuntu-latest
 
         steps:
