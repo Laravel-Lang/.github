@@ -36,6 +36,8 @@ categories:
 
 exclude-labels:
   - 'skip-changelog'
+  - 'code-style'
+  - 'statuses'
 
 version-resolver:
   major:
