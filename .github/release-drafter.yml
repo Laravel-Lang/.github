@@ -36,7 +36,9 @@ categories:
 
 exclude-labels:
   - 'skip-changelog'
+  - 'github_actions'
   - 'code-style'
+  - 'dependabot'
   - 'statuses'
 
 version-resolver:
