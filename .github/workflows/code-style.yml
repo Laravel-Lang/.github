@@ -3,7 +3,7 @@ on:
 
 jobs:
     check:
-        runs-on: ${{ secrets.RUNNER_NAME }}
+        runs-on: self-hosted
         
         if: ${{ github.event_name != 'push' || github.ref != 'refs/heads/main' }}
 
@@ -26,7 +26,7 @@ jobs:
                 run: codestyle --test
 
     fix:
-        runs-on: ${{ secrets.RUNNER_NAME }}
+        runs-on: self-hosted
         
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
 
@@ -66,7 +66,7 @@ jobs:
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v6
                 with:
-                    branch: code-style
+                    branch: projects/code-style
                     branch-suffix: random
                     delete-branch: true
                     title: "🦋 The code style has been fixed"
