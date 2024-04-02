@@ -7,7 +7,7 @@ jobs:
     locale:
         name: Locale
 
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         strategy:
             fail-fast: true
             max-parallel: 2
