@@ -12,8 +12,8 @@ jobs:
             fail-fast: true
             max-parallel: 2
             matrix:
-                # deactivated: ar, az, bn, bs, da, de, de_CH, es, fa, fr, hr, it, ja, mk, ne, nl, pl, pt, pt_BR, ro, ru, sr_Cyrl, sw, th, tr, uk, vi, zh_CN, zh_HK
-                locale: [ af, ak, am, as, be, bg, bho, bm, ca, ceb, ckb, cs, cy, doi, ee, el, eo, et, eu, fi, fil, fy, ga, gd, gl, gu, ha, haw, he, hi, hu, hy, id, ig, is, ka, kk, km, kn, ko, ku, ky, lb, lg, ln, lo, lt, lv, mai, mg, mi, ml, mn, mni_Mtei, mr, ms, mt, my, nb, nn, om, or, pa, ps, qu, rw, sa, sd, si, sk, sl, sn, so, sq, su, sv, ta, te, tg, ti, tk, tl, tt, ug, ur, uz_Cyrl, xh, yi, yo, zh_TW, zu ]
+                # deactivated: ar, az, bn, bs, da, de, de_CH, el, es, fa, fr, hr, it, ja, mk, ne, nl, pl, pt, pt_BR, ro, ru, sr_Cyrl, sw, th, tr, uk, vi, zh_CN, zh_HK
+                locale: [ af, ak, am, as, be, bg, bho, bm, ca, ceb, ckb, cs, cy, doi, ee, eo, et, eu, fi, fil, fy, ga, gd, gl, gu, ha, haw, he, hi, hu, hy, id, ig, is, ka, kk, km, kn, ko, ku, ky, lb, lg, ln, lo, lt, lv, mai, mg, mi, ml, mn, mni_Mtei, mr, ms, mt, my, nb, nn, om, or, pa, ps, qu, rw, sa, sd, si, sk, sl, sn, so, sq, su, sv, ta, te, tg, ti, tk, tl, tt, ug, ur, uz_Cyrl, xh, yi, yo, zh_TW, zu ]
         steps:
             -   name: Checkout code
                 uses: actions/checkout@v4
