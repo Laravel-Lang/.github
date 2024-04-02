@@ -18,7 +18,7 @@ jobs:
         contents: write
         pull-requests: write
 
-    runs-on: ${{ secrets.RUNNER_NAME }}
+    runs-on: self-hosted
 
     steps:
       - uses: release-drafter/release-drafter@v6
