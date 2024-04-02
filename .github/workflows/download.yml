@@ -15,7 +15,7 @@ on:
 
 jobs:
     project:
-        runs-on: self-hosted
+        runs-on: ${{ secrets.RUNNER_NAME }}
 
         steps:
             -   name: Checkout code
