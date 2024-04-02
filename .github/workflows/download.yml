@@ -41,7 +41,7 @@ jobs:
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v6
                 with:
-                    branch: projects/patch
+                    branch: projects/download
                     branch-suffix: random
                     delete-branch: true
                     add-paths: ${{ inputs.paths }}
