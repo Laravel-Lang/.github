@@ -49,4 +49,4 @@ jobs:
                     commit-message: 🗝️ Updated ${{ inputs.project }} keys
                     body: Updated keys for ${{ inputs.project }} 💪
                     labels: |
-                        added
+                        source
