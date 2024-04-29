@@ -20,6 +20,9 @@ categories:
     labels:
       - 'fix'
       - 'bug'
+  - title: 'Source'
+    labels:
+      - 'source'
   - title: 'Machine translations'
     collapse-after: 20
     labels:
@@ -51,6 +54,7 @@ version-resolver:
       - 'minor'
       - 'added'
       - 'feature'
+      - 'source'
   default: patch
 
 template: $CHANGES
