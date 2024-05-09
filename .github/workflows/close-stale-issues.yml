@@ -9,6 +9,10 @@ jobs:
     steps:
       - uses: actions/stale@v9
         with:
+          days-before-stale: 30
+          ignore-updates: true
+          stale-issue-label: stale
+          stale-pr-label: stale
           stale-issue-message: |
             There has been no activity on this issue for a long time, so we are closing it.
 
