@@ -1,0 +1,23 @@
+name: Close Stale Issues and PRs
+
+on:
+  workflow_call:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: |
+            There has been no activity on this issue for a long time, so we are closing it.
+
+            In case your problem is actual, you can create a [new issue](https://github.com/Laravel-Lang/common/issues/new/choose).
+
+            Thank you!
+          stale-pr-message: |
+            There has been no activity on this PR for a long time, so we are closing it.
+
+            In case your problem is actual, you can send a new PR.
+
+            Thank you!
