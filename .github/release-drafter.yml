@@ -9,20 +9,20 @@ sort-direction: 'ascending'
 include-pre-releases: true
 
 categories:
+  - title: 'Source'
+    labels:
+      - 'source'
   - title: 'Added'
     labels:
       - 'added'
   - title: 'Changed'
-  - title: 'Removed'
-    labels:
-      - 'removed'
   - title: 'Fixed'
     labels:
       - 'fix'
       - 'bug'
-  - title: 'Source'
+  - title: 'Removed'
     labels:
-      - 'source'
+      - 'removed'
   - title: 'Machine translations'
     collapse-after: 20
     labels:
