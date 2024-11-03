@@ -4,6 +4,50 @@ on:
     workflow_call:
 
 jobs:
+    english:
+        name: English localization update
+
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
+                    coverage: none
+
+            -   name: Install dependencies
+                run: |
+                    composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+                    composer global require dragon-code/codestyler
+
+            -   name: Recreate files
+                run: |
+                    rm -rf ./locales/en
+                    vendor/bin/lang create
+
+            -   name: Synchronization
+                run: vendor/bin/lang sync
+
+            -   name: Code-Style
+                run: codestyle
+
+            -   name: Create a Pull Request
+                uses: peter-evans/create-pull-request@v6
+                with:
+                    branch: projects/sync
+                    branch-suffix: random
+                    delete-branch: true
+                    add-paths: locales/*
+                    title: "[en]: English localization update"
+                    commit-message: 🔑 English localization update
+                    body: 🔑 English localization update
+                    labels: |
+                        sync
+
     keys:
         name: Keys
 
@@ -23,11 +67,6 @@ jobs:
                 run: |
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
                     composer global require dragon-code/codestyler
-
-            -   name: English localization synchronization
-                run: |
-                    rm -rf ./locales/en
-                    vendor/bin/lang create
 
             -   name: Keys actualization
                 run: vendor/bin/lang sync
