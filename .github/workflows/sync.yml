@@ -24,6 +24,11 @@ jobs:
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
                     composer global require dragon-code/codestyler
 
+            -   name: English localization synchronization
+                run: |
+                    rm -rf ./locales/en
+                    vendor/bin/lang create
+
             -   name: Keys actualization
                 run: vendor/bin/lang sync
 
