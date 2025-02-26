@@ -1,0 +1,23 @@
+titles:
+  full: $FULL_TITLE # Laravel Lang Foo
+  short: $SHORT_TITLE # Foo
+
+package:
+  repository: $REPOSITORY # Laravel-Lang/foo
+  name: $PACKAGE_NAME # laravel-lang/foo
+  is-dev: $IS_DEV # true
+
+preview: https://preview.dragon-code.pro/$PACKAGE_NAME.svg?brand=laravel
+
+templates:
+  using: Execute the `php artisan lang:update` console command.
+
+  communication: We also have chats in Telegram.
+                 # or empty for disable this one.
+
+  contributing: Please see [CONTRIBUTING](https://laravel-lang.com/contributions.html) for details.
+  support: ❤️ Laravel Lang? Please consider supporting our collective on [Boosty](https://boosty.to/laravel-lang).
+
+license:
+  type: MIT License
+  link: LICENSE
