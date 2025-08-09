@@ -22,7 +22,7 @@ jobs:
             -   name: Install dependencies
                 run: |
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
-                    composer global require dragon-code/codestyler
+                    composer global require dragon-code/codestyler:^5.0
 
             -   name: Keys actualization
                 run: vendor/bin/lang sync
