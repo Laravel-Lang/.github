@@ -5,7 +5,7 @@ jobs:
     check:
         runs-on: ubuntu-latest
 
-        name: Title Checker
+        name: Accept
 
         steps:
             - uses: thehanimo/pr-title-checker@v1.4.3
