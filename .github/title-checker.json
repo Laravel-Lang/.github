@@ -1,9 +1,9 @@
 {
   "CHECKS": {
-    "regexp": "^\\[(source|[a-z]{2,3}(?'a'_[a-zA-Z]+){,2})\\]:\\s.+$"
+    "regexp": "^\\[(source|docs|[a-z]{2,3}(?'a'_[a-zA-Z]+){,2})\\]:\\s.+$"
   },
   "MESSAGES": {
     "success": "PR Title format was accepted",
-    "failure": "The PR title does not match the format: /^\\[(source|[a-z]{2,3}(?'a'_[a-zA-Z]+){,2})\\]:\\s.+$/"
+    "failure": "The PR title does not match the format: /^\\[(source|docs|[a-z]{2,3}(?'a'_[a-zA-Z]+){,2})\\]:\\s.+$/"
   }
 }
