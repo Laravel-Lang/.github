@@ -3,6 +3,7 @@
     "regexp": "^\\[[a-z]{2,3}[a-zA-Z_]*\\]:\\s.+$"
   },
   "MESSAGES": {
+    "success": "PR Title format was accepted",
     "failure": "The PR title does not match the [format](https://laravel-lang.com/contributions.html#how_to_edit_files): /^\\[[a-z]{2,3}[a-zA-Z_]*\\]:\\s.+$/"
   }
 }
