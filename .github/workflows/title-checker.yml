@@ -28,7 +28,7 @@ jobs:
                 message: |
                     ### 🚨 PR Title Needs Formatting
                     The title of this PR needs to be formatted correctly. 
-                    Please update the title to match the [format](https://laravel-lang.com/contributions.html#how_to_edit_files) `[locale]: Description`.
+                    Please update the title to match the [format](https://laravel-lang.com/contributions.html#pr_title) `[locale]: Description`.
                     Examples:
                     * `[fr]: Added new localization`
                     * `[de_DE]: Update localization`
