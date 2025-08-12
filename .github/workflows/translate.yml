@@ -16,7 +16,7 @@ jobs:
                 locale: [ af, ak, am, as, be, bg, bho, bm, ca, ceb, ckb, cs, cy, doi, ee, eo, et, eu, fi, fil, fy, ga, gd, gl, gu, ha, haw, he, hi, hu, hy, id, ig, is, ka, kk, km, kn, ko, ku, ky, lb, lg, ln, lo, lt, lv, mai, mg, mi, ml, mn, mni_Mtei, mr, ms, mt, my, nb, nn, om, or, pa, ps, qu, rw, sa, sd, si, sk, sl, sn, so, sq, su, sv, ta, te, tg, ti, tk, tl, tt, ug, ur, uz_Cyrl, xh, yi, yo, zh_TW, zu ]
         steps:
             -   name: Checkout code
-                uses: actions/checkout@v4
+                uses: actions/checkout@v5
 
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
