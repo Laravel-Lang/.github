@@ -15,25 +15,36 @@ jobs:
                 # deactivated: ar, az, bn, bs, da, de, de_CH, el, es, fa, fr, hr, it, ja, mk, ne, nl, pl, pt, pt_BR, ro, ru, sr_Cyrl, sw, th, tr, uk, vi, zh_CN, zh_HK
                 locale: [ af, ak, am, as, be, bg, bho, bm, ca, ceb, ckb, cs, cy, doi, ee, eo, et, eu, fi, fil, fy, ga, gd, gl, gu, ha, haw, he, hi, hu, hy, id, ig, is, ka, kk, km, kn, ko, ku, ky, lb, lg, ln, lo, lt, lv, mai, mg, mi, ml, mn, mni_Mtei, mr, ms, mt, my, nb, nn, om, or, pa, ps, qu, rw, sa, sd, si, sk, sl, sn, so, sq, su, sv, ta, te, tg, ti, tk, tl, tt, ug, ur, uz_Cyrl, xh, yi, yo, zh_TW, zu ]
         steps:
-            -   name: Checkout code
-                uses: actions/checkout@v5
+            -   uses: actions/checkout@v5
+            -   uses: shivammathur/setup-php@v2
 
-            -   name: Setup PHP
-                uses: shivammathur/setup-php@v2
+            -   uses: actions/setup-node@v4
                 with:
-                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
-                    coverage: none
+                    node-version: 'latest'
 
             -   name: Install dependencies
                 run: |
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
                     composer global require dragon-code/codestyler
 
+            -   name: Install Node dependencies
+                run: npm i -D @biomejs/biome
+
+            -   name: Publish config files
+                run: |
+                    codestyle pint 8.2
+                    codestyle npm
+
             -   name: Translate
                 run: vendor/bin/lang translate --locale ${{ matrix.locale }}
 
-            -   name: Code-Style
-                run: codestyle
+            -   name: PHP code-style
+                run: pint --parallel --test
+
+            -   name: Node code-style
+                run: |
+                    npx @biomejs/biome lint
+                    npx @biomejs/biome format
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v7
