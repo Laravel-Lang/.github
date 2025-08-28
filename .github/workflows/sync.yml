@@ -34,12 +34,12 @@ jobs:
                 run: vendor/bin/lang sync
 
             -   name: PHP code-style
-                run: pint --parallel --test
+                run: pint --parallel
 
             -   name: Node code-style
                 run: |
-                    npx @biomejs/biome lint
-                    npx @biomejs/biome format
+                    npx @biomejs/biome lint --write
+                    npx @biomejs/biome format --write
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v7
