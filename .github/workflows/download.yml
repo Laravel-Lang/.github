@@ -2,9 +2,6 @@ name: Download
 
 on:
     workflow_call:
-        secrets:
-            novaRepository:
-                required: false
         inputs:
             project:
                 required: true
