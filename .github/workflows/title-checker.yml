@@ -1,9 +1,7 @@
 on:
     workflow_call:
 
-permissions:
-  issues: write
-  pull-requests: write
+permissions: write-all
 
 jobs:
     check:
