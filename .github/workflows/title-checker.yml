@@ -33,8 +33,8 @@ jobs:
                     The title of this PR needs to be formatted correctly. 
                     Please update the title to match the [format](https://laravel-lang.com/contributions.html#pr_title) `[locale]: Description`.
                     Examples:
-                    * `[fr]: Added new localization`
-                    * `[de_DE]: Update localization`
+                    * `[fr]: Missing keys translated`
+                    * `[de, de_DE]: Missing keys translated`
 
             - name: Add comment that PR title is fixed
               if: ${{ steps.check.outputs.success == 'true'}}
