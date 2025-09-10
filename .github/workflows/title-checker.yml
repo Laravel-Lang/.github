@@ -1,10 +1,6 @@
 on:
     workflow_call:
 
-permissions:
-    pull-requests: write
-    contents: read
-
 jobs:
     check:
         runs-on: ubuntu-latest
@@ -16,6 +12,7 @@ jobs:
               id: check
               continue-on-error: true
               with:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 pass_on_octokit_error: false
                 github_configuration_owner: Laravel-Lang
                 github_configuration_repo: .github
