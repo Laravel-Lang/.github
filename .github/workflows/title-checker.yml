@@ -26,6 +26,7 @@ jobs:
               uses: marocchino/sticky-pull-request-comment@v2
               if: ${{ steps.check.outputs.success == 'false'}}
               with:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 header: 'PR Title Check'
                 recreate: true
                 message: |
@@ -40,6 +41,7 @@ jobs:
               if: ${{ steps.check.outputs.success == 'true'}}
               uses: marocchino/sticky-pull-request-comment@v2
               with:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 header: 'PR Title Check'
                 recreate: true
                 message: |
