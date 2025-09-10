@@ -1,7 +1,9 @@
 on:
     workflow_call:
 
-permissions: write-all
+permissions:
+    pull-requests: write
+    contents: read
 
 jobs:
     check:
@@ -14,7 +16,6 @@ jobs:
               id: check
               continue-on-error: true
               with:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 pass_on_octokit_error: false
                 github_configuration_owner: Laravel-Lang
                 github_configuration_repo: .github
@@ -26,8 +27,8 @@ jobs:
               if: ${{ steps.check.outputs.success == 'false'}}
               with:
                 header: 'PR Title Check'
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 recreate: true
+                delete: true
                 message: |
                     ### 🚨 PR Title Needs Formatting
                     The title of this PR needs to be formatted correctly. 
@@ -41,8 +42,8 @@ jobs:
               uses: marocchino/sticky-pull-request-comment@v2
               with:
                 header: 'PR Title Check'
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 recreate: true
+                delete: true
                 message: |
                     ### ✅ PR Title Formatted Correctly
                     The title of this PR has been updated to match the correct format. Thank you!
