@@ -24,7 +24,6 @@ jobs:
               if: ${{ steps.check.outputs.success == 'false'}}
               with:
                 header: 'PR Title Check'
-                recreate: true
                 delete: true
                 message: |
                     ### 🚨 PR Title Needs Formatting
@@ -39,7 +38,6 @@ jobs:
               uses: marocchino/sticky-pull-request-comment@v2
               with:
                 header: 'PR Title Check'
-                recreate: true
                 delete: true
                 message: |
                     ### ✅ PR Title Formatted Correctly
