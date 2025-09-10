@@ -1,10 +1,10 @@
 {
   "CHECKS": {
-    "regexp": "^(Draft:\\s)?\\[(source|docs|app|[a-z]{2,3}(_[a-zA-Z]+){0,2})\\]:\\s.+$",
+    "regexp": "^(Draft:\\s)?\\[[a-zA-Z,_\\s]+\\]:\\s.+$",
     "ignoreLabels": ["skip-changelog", "dependabot"]
   },
   "MESSAGES": {
     "success": "PR Title format was accepted",
-    "failure": "The PR title does not match the format: /^(Draft:\\s)?\\[(source|docs|app|[a-z]{2,3}(_[a-zA-Z]+){0,2})\\]:\\s.+$/"
+    "failure": "The PR title does not match the format: /^(Draft:\\s)?\\[[a-zA-Z,_\\s]+\\]:\\s.+$/"
   }
 }
