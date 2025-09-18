@@ -27,27 +27,27 @@ jobs:
 
             -   name: Setup Composer
                 run: |
-                    composer global config --no-plugins allow-plugins.laravel/pint true
-                    composer global config --no-plugins allow-plugins.ergebnis/composer-normalize true
-                    
                     composer config --no-plugins allow-plugins.laravel/pint true
                     composer config --no-plugins allow-plugins.ergebnis/composer-normalize true
 
             -   name: Install Composer dependencies
                 run: |
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
-                    composer global require dragon-code/codestyler
+                    composer require dragon-code/codestyler --dev
+
+                    composer config scripts.style "vendor/bin/pint --parallel"
 
             -   name: Install Node dependencies
                 run: npm i -D @biomejs/biome
 
+            -   name: Download
+                run: ${{ inputs.commands }}
+
             -   name: Publish config files
                 run: |
                     codestyle pint 8.2
+                    codestyle editorconfig
                     codestyle npm
-
-            -   name: Download
-                run: ${{ inputs.commands }}
 
             -   name: PHP code-style
                 run: pint --parallel
