@@ -45,9 +45,9 @@ jobs:
 
             -   name: Publish config files
                 run: |
-                    codestyle pint 8.2
-                    codestyle editorconfig
-                    codestyle npm
+                    vendor/bin/codestyle pint 8.2
+                    vendor/bin/codestyle editorconfig
+                    vendor/bin/codestyle npm
 
             -   name: PHP code-style
                 run: pint --parallel
