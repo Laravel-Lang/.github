@@ -27,13 +27,16 @@ jobs:
 
             -   name: Setup Composer
                 run: |
+                    composer global config --no-plugins allow-plugins.laravel/pint true
+                    composer global config --no-plugins allow-plugins.ergebnis/composer-normalize true
+
                     composer config --no-plugins allow-plugins.laravel/pint true
                     composer config --no-plugins allow-plugins.ergebnis/composer-normalize true
 
             -   name: Install Composer dependencies
                 run: |
+                    composer global require dragon-code/codestyler
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
-                    composer require dragon-code/codestyler --dev
 
                     composer config scripts.style "vendor/bin/pint --parallel"
 
@@ -42,10 +45,8 @@ jobs:
 
             -   name: Publish config files
                 run: |
-                    vendor/bin/codestyle pint 8.2
-                    vendor/bin/codestyle editorconfig
-                    vendor/bin/codestyle npm
-                    composer normalize
+                    codestyle pint 8.2
+                    codestyle npm
 
             -   name: Download
                 run: ${{ inputs.commands }}
