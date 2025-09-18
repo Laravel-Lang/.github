@@ -40,14 +40,15 @@ jobs:
             -   name: Install Node dependencies
                 run: npm i -D @biomejs/biome
 
-            -   name: Download
-                run: ${{ inputs.commands }}
-
             -   name: Publish config files
                 run: |
                     vendor/bin/codestyle pint 8.2
                     vendor/bin/codestyle editorconfig
                     vendor/bin/codestyle npm
+                    composer normalize
+
+            -   name: Download
+                run: ${{ inputs.commands }}
 
             -   name: PHP code-style
                 run: pint --parallel
