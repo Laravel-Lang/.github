@@ -25,7 +25,15 @@ jobs:
                 with:
                     node-version: 'latest'
 
-            -   name: Install dependencies
+            -   name: Setup Composer
+                run: |
+                    composer global config --no-plugins allow-plugins.laravel/pint true
+                    composer global config --no-plugins allow-plugins.ergebnis/composer-normalize true
+                    
+                    composer config --no-plugins allow-plugins.laravel/pint true
+                    composer config --no-plugins allow-plugins.ergebnis/composer-normalize true
+
+            -   name: Install Composer dependencies
                 run: |
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
                     composer global require dragon-code/codestyler
