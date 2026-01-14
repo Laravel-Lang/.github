@@ -1,0 +1,7 @@
+image:
+  parameters:
+    icon: 'https://laravel.com/img/logomark.min.svg'
+
+    description: 'by Laravel Lang'
+
+    packageManager: 'composer'
