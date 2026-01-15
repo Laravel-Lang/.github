@@ -1,7 +1,9 @@
+package:
+  manager: 'composer'
+
+data:
+  description: 'by Laravel Lang'
+
 image:
   parameters:
     icon: 'https://laravel.com/img/logomark.min.svg'
-
-    description: 'by Laravel Lang'
-
-    packageManager: 'composer'
