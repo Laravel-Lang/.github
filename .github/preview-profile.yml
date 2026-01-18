@@ -1,0 +1,13 @@
+package:
+  manager: 'composer'
+  dev: true
+  name: 'laravel-lang/common'
+
+data:
+  title: 'Localize Application'
+  description: 'with Laravel Lang'
+
+image:
+  parameters:
+    icon: 'https://laravel.com/img/logomark.min.svg'
+    style: 'style_1'
