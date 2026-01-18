@@ -45,7 +45,7 @@ jobs:
                 with:
                     token: ${{ secrets.GITHUB_TOKEN }}
                     config: '.github/preview-profile.yml'
-                    readme: '.github/profile/README.md'
+                    readme: 'profile/README.md'
 
             -   name: Merge PR
                 if: steps.preview2.outputs.pullRequestNumber != ''
