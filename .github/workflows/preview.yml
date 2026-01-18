@@ -10,5 +10,45 @@ permissions:
     pull-requests: write
 
 jobs:
-    preview:
-        uses: TheDragonCode/.github/.github/workflows/preview.yml@main
+    main:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v6
+                with:
+                    fetch-depth: 0
+
+            -   name: Update banner
+                uses: TheDragonCode/github-preview-updater@v2
+                id: preview1
+                with:
+                    token: ${{ secrets.GITHUB_TOKEN }}
+                    config: '.github/preview-profile.yml'
+
+            -   name: Merge PR
+                if: steps.preview1.outputs.pullRequestNumber != ''
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                run: gh pr merge --merge --delete-branch ${{ steps.preview1.outputs.pullRequestNumber }}
+
+    profile:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v6
+                with:
+                    fetch-depth: 0
+
+            -   name: Update banner
+                uses: TheDragonCode/github-preview-updater@v2
+                id: preview2
+                with:
+                    token: ${{ secrets.GITHUB_TOKEN }}
+                    config: '.github/preview-profile.yml'
+                    readme: '.github/profile/README.md'
+
+            -   name: Merge PR
+                if: steps.preview2.outputs.pullRequestNumber != ''
+                env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                run: gh pr merge --merge --delete-branch ${{ steps.preview2.outputs.pullRequestNumber }}
