@@ -1,9 +1,6 @@
 # Laravel Lang - Community Health Files 
 
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://banners.beyondco.de/Localize%20Application.png?pattern=topography&style=style_1&fontSize=100px&md=1&showWatermark=1&icon=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg&theme=dark&packageManager=composer+require+--dev&packageName=laravel-lang%2Fcommon&description=with+Laravel+Lang&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg">
-    <img src="https://banners.beyondco.de/Localize%20Application.png?pattern=topography&style=style_1&fontSize=100px&md=1&showWatermark=1&icon=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg&theme=light&packageManager=composer+require+--dev&packageName=laravel-lang%2Fcommon&description=with+Laravel+Lang&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="Localize Application">
-</picture>
+<p align="center"><a href="https://laravel-lang.com" target="_blank"><img src="https://raw.githubusercontent.com/Laravel-Lang/art/main/previews/laravel-lang.jpg"></a></p>
 
 This repository contains the default [community health files](https://help.github.com/en/github/building-a-strong-community/creating-a-default-community-health-file) for the `Laravel Lang` project.
 
