@@ -1,6 +1,6 @@
 # Laravel Lang
 
-<img src="https://raw.githubusercontent.com/Laravel-Lang/art/main/previews/laravel-lang.jpg">
+<p align="center"><a href="https://laravel-lang.com" target="_blank"><img src="https://raw.githubusercontent.com/Laravel-Lang/art/main/previews/laravel-lang.jpg"></a></p>
 
 ## Documentation
 
