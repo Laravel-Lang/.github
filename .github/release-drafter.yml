@@ -58,3 +58,14 @@ version-resolver:
   default: patch
 
 template: $CHANGES
+
+autolabeler:
+  - labels: ['added']
+    title:
+      - '/^(?:Draft:\s)?\[[a-z_,\s]+\]:\s+Add(?:ed)?\b/i'
+  - labels: ['fix']
+    title:
+      - '/^(?:Draft:\s)?\[[a-z_,\s]+\]:\s+Fix(?:ed)?\b/i'
+  - labels: ['removed']
+    title:
+      - '/^(?:Draft:\s)?\[[a-z_,\s]+\]:\s+(?:Remove|Removed|Delete|Deleted)\b/i'
