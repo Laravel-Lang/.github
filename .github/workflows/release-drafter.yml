@@ -1,20 +1,19 @@
 name: Release
 
 on:
-  workflow_call:
+    workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   draft:
     name: Draft
-    if: github.event_name != 'pull_request_target'
-
-    concurrency:
-      group: draft-${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
 
     permissions:
-      contents: write
-      pull-requests: write
+        contents: write
+        pull-requests: write
 
     runs-on: ubuntu-latest
 
@@ -22,18 +21,3 @@ jobs:
       - uses: release-drafter/release-drafter@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  autolabel:
-    name: Label pull request
-    if: github.event_name == 'pull_request_target'
-
-    permissions:
-      contents: read
-      pull-requests: write
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: release-drafter/release-drafter/autolabeler@v7
-        with:
-          config-name: 'Laravel-Lang/.github:release-drafter.yml@main'
