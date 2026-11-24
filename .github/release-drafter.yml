@@ -1,60 +1,66 @@
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
-change-template: '- $TITLE by @$AUTHOR in #$NUMBER'
+change-template: '- `$PR_NUMBER` $CHANGE_TITLE by @$CHANGE_AUTHOR'
 category-template: '## $TITLE'
 
 sort-by: 'title'
 sort-direction: 'ascending'
 
-prerelease: false
+include-commits: true
 
 categories:
-  - title: 'Source'
-    labels:
-      - 'source'
-  - title: 'Added'
-    labels:
-      - 'added'
-  - title: 'Changed'
-  - title: 'Fixed'
-    labels:
-      - 'fix'
-      - 'bug'
-  - title: 'Removed'
-    labels:
-      - 'removed'
-  - title: 'Machine translations'
-    collapse-after: 20
-    labels:
-      - 'machine'
-  - title: 'Dependencies'
-    collapse-after: 10
-    labels:
-      - 'dependencies'
   - title: 'Security'
-    labels:
-      - 'security'
-      - 'security fix'
-      - 'security vulnerability'
-
-exclude-labels:
-  - 'skip-changelog'
-  - 'github_actions'
-  - 'code-style'
-  - 'dependabot'
-  - 'statuses'
-
-version-resolver:
-  major:
-    labels:
-      - 'major'
-      - 'removed'
-  minor:
-    labels:
-      - 'minor'
-      - 'added'
-      - 'feature'
-      - 'source'
-  default: patch
+    semver-increment: patch
+    when:
+      labels:
+        - 'security'
+        - 'security fix'
+        - 'security vulnerability'
+  - title: 'Source'
+    semver-increment: minor
+    when:
+      labels:
+        - 'source'
+  - title: 'Added'
+    semver-increment: minor
+    when:
+      labels:
+        - 'added'
+        - 'feature'
+        - 'enhancement'
+  - title: 'Changed'
+    semver-increment: minor
+  - title: 'Fixed'
+    semver-increment: patch
+    when:
+      labels:
+        - 'fix'
+        - 'bug'
+        - 'bugfix'
+  - title: 'Removed'
+    semver-increment: major
+    when:
+      labels:
+        - 'removed'
+  - title: 'Machine translations'
+    semver-increment: patch
+    collapse-after: 20
+    when:
+      labels:
+        - 'machine'
+  - title: 'Dependencies'
+    semver-increment: patch
+    collapse-after: 10
+    when:
+      labels:
+        - 'dependencies'
+        - 'dependabot'
+  - type: 'pre-exclude'
+    when:
+      labels:
+        - 'skip-changelog'
+        - 'github_actions'
+        - 'code-style'
+        - 'statuses'
 
 template: $CHANGES
