@@ -10,7 +10,7 @@ jobs:
       - uses: actions/stale@v10
         with:
           days-before-stale: 30
-          ignore-updates: true
+          days-before-close: 7
           stale-issue-label: stale
           stale-pr-label: stale
           stale-issue-message: |
