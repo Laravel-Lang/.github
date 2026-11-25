@@ -3,6 +3,15 @@ tag-template: '$RESOLVED_VERSION'
 change-template: '- `$PR_NUMBER` $CHANGE_TITLE by @$CHANGE_AUTHOR'
 category-template: '## $TITLE'
 
+template: |
+  ## What's Changed
+
+  $CHANGES
+
+  ## New Contributors
+
+  $NEW_CONTRIBUTORS
+
 sort-by: 'title'
 sort-direction: 'ascending'
 
@@ -62,5 +71,3 @@ categories:
         - 'github_actions'
         - 'code-style'
         - 'statuses'
-
-template: $CHANGES
