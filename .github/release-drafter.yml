@@ -1,7 +1,9 @@
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
-change-template: '- `#$NUMBER` $TITLE by $AUTHORS'
+change-template: '- #$NUMBER $TITLE by $AUTHORS'
 category-template: '### $TITLE'
+change-author-template: '$AUTHOR_MENTION'
+change-authors-separator: ', '
 
 template: |
   ## What's Changed
