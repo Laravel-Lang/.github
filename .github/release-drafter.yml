@@ -1,7 +1,7 @@
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
-change-template: '- `$PR_NUMBER` $CHANGE_TITLE by @$CHANGE_AUTHOR'
-category-template: '## $TITLE'
+change-template: '- `#$NUMBER` $TITLE by $AUTHORS'
+category-template: '### $TITLE'
 
 template: |
   ## What's Changed
